@@ -16,32 +16,32 @@ contributes:
           echo: false
     pdf:
       # define default configuration for the pdf version of your format
-      documentclass: aft
-      colorlinks: true
-      urlcolor: red
+      documentclass: exploratory
+      classoption: [twocolumn]
+      number-sections: true
+      toc: true
+      linkcolor: OliveGreen
+      filecolor: OliveGreen
+      citecolor: OliveGreen
+      urlcolor: OliveGreen
+      toc-title: "Table of Contents"
       fig-width: 6.5
       fig-height: 4.5
-      # This format use a bst file with natbib
-      biblio-style: te
-      cite-method: natbib
-      # Set this below (`biblio-config: false`) if your cls already load a bst file
-      # biblio-config: false
-      # Content to add in header that your format is using
-      header-includes: |
-        \usepackage{orcidlink}
-        \definecolor{mypink}{RGB}{219, 48, 122}
+      geometry:
+        - margin=.75in
+        - nohead
+        - marginparsep=.25in
+        - foot=0.5in
       template-partials:
-        # Add here the partials your format is using
         - "partials/title.tex"
         - "partials/_authors.tex"
+        - "partials/toc.tex"
+        - "partials/before-body.tex"
       format-resources:
-        # Add here the resources required for the PDF rendering
-        - aft.cls
-        - te.bst
+        - exploratory.cls
     html:
       # define default configuration for the html version of your format
       number-sections: true
       toc: true
       theme: custom.scss
-      # Use a CSL file to style (https://www.zotero.org/styles/)
-      csl: https://www.zotero.org/styles/journal-of-institutional-and-theoretical-economics
+      csl: https://www.zotero.org/styles/american-institute-of-aeronautics-and-astronautics.csl

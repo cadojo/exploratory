@@ -7,7 +7,7 @@ $-- Customize is needed, like below for printing the authors. Otherwise remove t
 $-- %%%%%%%%%%%%%%%%
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{\textbf{$title$}}
 $endif$
 $if(subtitle)$
 \usepackage{etoolbox}
@@ -18,5 +18,7 @@ $if(subtitle)$
 \makeatother
 \subtitle{$subtitle$}
 $endif$
+\usepackage{orcidlink}
 \author{${ by-author:_authors.tex()[\and ] }}
 \date{$date$}
+$if(thanks)$\thanks{$thanks$}$endif$
